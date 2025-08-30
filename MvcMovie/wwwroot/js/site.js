@@ -1,4 +1,16 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿import { movies } from './data/data.js';
 
-// Write your JavaScript code.
+export function changeBackground() {
+  const randomIndex = Math.floor(Math.random() * movies.length);
+  const movie = movies[randomIndex];
+
+  const backgroundElement = document.getElementById('background');
+  backgroundElement.style.backgroundImage = `url(${movie.posterPath})`;
+
+  document.getElementById('movie-title').textContent = movie.title;
+  document.getElementById('movie-year').textContent = movie.year;
+  document.getElementById('movie-rating').textContent = movie.rating;
+  document.getElementById('movie-description').textContent = movie.description;
+}
+
+document.addEventListener('DOMContentLoaded', changeBackground);
