@@ -1,5 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgb(187, 164, 164);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
 html {
   font-size: 16px;
+}
+
+header,
+footer,
+main {
+  color: white;
+  width: 100%;
+  position: relative;
+  z-index: 100;
 }
 
 @media (min-width: 768px) {
@@ -12,7 +37,8 @@ html {
 .btn:active:focus,
 .btn-link.nav-link:focus,
 .form-control:focus,
-.form-check-input:focus {
+.form-check-input:focus,
+a:focus {
   box-shadow:
     0 0 0 0.1rem white,
     0 0 0 0.25rem #258cfb;
@@ -25,4 +51,74 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+/* Header */
+
+.header {
+  color: #fff;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+
+.navbar-brand {
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #f8f9fa;
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin: 0 0.2rem;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-collapse {
+  background-color: transparent;
 }
