@@ -234,6 +234,145 @@ body {
   color: rgb(187, 164, 164);
 }
 
+/* Slider */
+
+.slider-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.slider-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.slider-track {
+  display: flex;
+  overflow: hidden;
+  padding: 15px 0;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex: 0 0 calc(100% / 4 - 15px);
+  margin: 0 7.5px;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .slide {
+    flex: 0 0 calc(100% / 3 - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 calc(100% / 2 - 15px);
+  }
+}
+
+@media (max-width: 576px) {
+  .slide {
+    flex: 0 0 calc(100% - 15px);
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.star-rating {
+  color: #ff9e6b;
+  font-size: 0.9rem;
+}
+
+.slider-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.btn-slider {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-slider:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 /* Footer */
 footer {
   background-color: rgba(0, 0, 0, 0.7);
