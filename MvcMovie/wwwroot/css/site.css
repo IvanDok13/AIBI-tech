@@ -122,3 +122,17 @@ body {
 .navbar-collapse {
   background-color: transparent;
 }
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 60px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.container {
+  padding: 0px;
+}
