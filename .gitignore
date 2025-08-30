@@ -484,5 +484,5 @@ $RECYCLE.BIN/
 *.swp
 
 # Folders
-bin/
-MvcMovie/obj/
+MvcMovie/obj/*
+MvcMovie/bin/*
