@@ -4,69 +4,107 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="search-title text-center">Search for Movies</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+  <a class="card-action" asp-action="Create">Create New</a>
 </p>
-<form asp-controller="Movies" asp-action="Index" method="get">
-    <p>
+<section>
+  <form
+    asp-controller="Movies"
+    asp-action="Index"
+    method="get"
+    class="search-form"
+  >
+    <select
+      class="form-select filter-select"
+      asp-for="MovieGenre"
+      asp-items="Model.Genres"
+    >
+      <option value="">All</option>
+    </select>
+    <div class="search-input-wrapper">
+      <label class="hidden" for="SearchString"></label
+      ><svg
+        class="search-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="currentColor"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+        ></path></svg
+      ><input
+        class="search-input"
+        type="text"
+        asp-for="SearchString"
+        id="SearchString"
+        placeholder="Search movies..."
+      />
+      <span data-testid="clear-input-button" class="clear-btn"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          fill="currentColor"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+          ></path></svg
+      ></span>
+    </div>
+    <input type="submit" value="Search" class="search-btn" />
+  </form>
+</section>
 
-        <select asp-for="MovieGenre" asp-items="Model.Genres">
-            <option value="">All</option>
-        </select>
+<section>
+  <div class="movies-container">
+    @foreach (var item in Model.Movies!) {
+    <div class="card">
+      <img
+          src="https://placehold.co/800@2x.png"
+          class="card-img-top"
+          alt="Poster-img"
+        />
+      <div class="card-body">
+        <h3 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h3>
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-label">Release Date:</span>
+            <span>@Html.DisplayFor(modelItem => item.ReleaseDate)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Genre:</span>
+            <span>@Html.DisplayFor(modelItem => item.Genre)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Price:</span>
+            <span>@Html.DisplayFor(modelItem => item.Price)</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Rating:</span>
+            <span>@Html.DisplayFor(modelItem => item.Rating)</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a asp-action="Edit" asp-route-id="@item.Id" class="card-action"
+            >Edit</a
+          >
+          |
+          <a asp-action="Details" asp-route-id="@item.Id" class="card-action"
+            >Details</a
+          >
+          |
+          <a asp-action="Delete" asp-route-id="@item.Id" class="card-action"
+            >Delete</a
+          >
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>
 
-        <label>Title: <input type="text" asp-for="SearchString" /></label>
-        <input type="submit" value="Filter" />
-    </p>
-</form>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].ReleaseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Rating)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Movies!)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReleaseDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>

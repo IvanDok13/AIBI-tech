@@ -27,3 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   prevBtn.addEventListener('click', prevSlide);
   nextBtn.addEventListener('click', nextSlide);
 });
+
+document.querySelectorAll('.clear-btn').forEach(button => {
+  button.addEventListener('click', function () {
+    this.parentElement.querySelector('input').value = '';
+  });
+});
