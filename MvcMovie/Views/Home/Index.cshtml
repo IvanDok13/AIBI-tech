@@ -3,47 +3,45 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4 hero-section
-    ">Choose the most incredible Movie</h1>
-    <p>Refresh the page to change the poster</p>
+  <h1 class="display-4 hero-section mb-4">Choose the most incredible Movie</h1>
 </div>
 
 <div class="movie-card">
-    <div class="row">
-        <div class="col-md text-left">
-            <h2 id="movie-title">Inception</h2>
-            <p id="movie-year" class="movie-year">2010</p>
-            <div class="rating">
-              <span id="movie-rating">8.8</span>/10
-            </div>
-            <p id="movie-description" class="mt-3">A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.</p>
+  <div class="row">
+    <div class="col-md text-left">
+      <h2 id="movie-title">Inception</h2>
+      <p id="movie-year" class="movie-year">2010</p>
+      <div class="rating"><span id="movie-rating">8.8</span>/10</div>
+      <p id="movie-description" class="mt-3">
+        A thief who steals corporate secrets through the use of dream-sharing
+        technology is given the inverse task of planting an idea into the mind
+        of a C.E.O.
+      </p>
 
-            <button class="btn btn-change mt-3" onclick="changeBackground()">
-              Change Background
-            </button>
-        </div>
+      <button class="btn btn-change mt-3">
+        Whatch movie
+      </button>
     </div>
+  </div>
 </div>
 
-<div class="container"></div>
-    <div class="slider-container">
-        <div class="slider-header">
-            <h2 class="slider-title">Trending Movies</h2>
-            <div class="slider-controls">
-            <button class="btn-slider" id="prevBtn">
-                <span><</span>
-            </button>
-            <button class="btn-slider" id="nextBtn">
-                <span>></span>
-            </button>
-            </div>
-        </div>
-            
-        <div class="slider-track">
-            <div class="slider" id="slider">
-            </div>
-        </div>
-        <div class="slider-indicators" id="indicators">
-        </div>
+<div class="container">
+  <div class="slider-container">
+    <div class="slider-header">
+      <h2 class="slider-title">Trending Movies</h2>
+      <div class="slider-controls">
+        <button class="btn-slider" id="prevBtn">
+          <span><</span>
+        </button>
+        <button class="btn-slider" id="nextBtn">
+          <span>></span>
+        </button>
+      </div>
     </div>
+
+    <div class="slider-track">
+      <div class="slider" id="slider"></div>
+    </div>
+    <div class="slider-indicators" id="indicators"></div>
+  </div>
 </div>
