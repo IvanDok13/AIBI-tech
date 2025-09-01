@@ -11,7 +11,11 @@ dotnet dev-certs https --trust
 ```
 3) Run app
 ```bash
-dotnet run 
+dotnet run
+```
+or
+```
+npm run dev 
 ```
 
 ## Contributing
