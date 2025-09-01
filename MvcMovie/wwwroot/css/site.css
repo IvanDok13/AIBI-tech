@@ -66,8 +66,13 @@ body {
 
 .navbar-brand {
   color: #fff;
-  font-weight: 600;
+  font-weight: 800;
   transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.accent {
+  color: #ff6b6b;
 }
 
 .navbar-brand:hover {
@@ -125,6 +130,7 @@ body {
   font-size: calc(1.475rem + 2.7vw);
   font-weight: 300;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .movie-background {
@@ -167,6 +173,11 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   width: 60%;
+  box-shadow: 0 5px 15px rgb(247 80 80 / 56%);
+}
+
+.description {
+  font-size: 1.5rem;
 }
 
 .btn-change {
@@ -245,6 +256,7 @@ body {
 .slider {
   display: flex;
   transition: transform 0.5s ease;
+  gap: 10px;
 }
 
 .slide {
@@ -252,7 +264,11 @@ body {
   margin: 0 7.5px;
   transition: transform 0.3s ease;
   max-height: 450px;
-  max-width: 270px;
+  max-width: 200px;
+}
+
+.slide:hover {
+  box-shadow: 0 1px 20px rgb(247 80 80);
 }
 
 @media (max-width: 992px) {
@@ -289,8 +305,9 @@ body {
 }
 
 .card-img-top {
-  height: 200px;
-  object-fit: cover;
+  object-fit: contain;
+  height: 300px;
+  width: 100%;
 }
 
 .card-body {
@@ -311,6 +328,10 @@ body {
 .star-rating {
   color: #ff9e6b;
   font-size: 0.9rem;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider-indicators {
@@ -489,12 +510,6 @@ body {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.card-img-top {
-  height: 300px;
-  object-fit: cover;
-  width: 100%;
 }
 
 .card-body {
