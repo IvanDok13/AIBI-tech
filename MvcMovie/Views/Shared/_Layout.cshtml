@@ -22,7 +22,7 @@
             asp-area=""
             asp-controller="Movies"
             asp-action="Index"
-            >Movie App
+            >Mov<span class='accent'>A</span>pp
             </a>
           <button
             class="navbar-toggler"
@@ -52,10 +52,26 @@
                   class="nav-link"
                   asp-area=""
                   asp-controller="Home"
-                  asp-action="Privacy"
-                  >Privacy</a>
+                  asp-action="Categories"
+                  >Categories</a>
+              </li>
+              <li class="nav-item"></li>
+                <a
+                  class="nav-link"
+                  asp-area=""
+                  asp-controller="Home"
+                  asp-action="Favorites"
+                  >Favorites</a>
               </li>
             </ul>
+            <div class="nav-item">
+                <a
+                  class="nav-link"
+                  asp-area=""
+                  asp-controller="Home"
+                  asp-action="SignIn"
+                  >Sign In</a>
+              </div>
           </div>
         </div>
       </nav>
