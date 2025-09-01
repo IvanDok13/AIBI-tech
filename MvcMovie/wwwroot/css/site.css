@@ -267,10 +267,6 @@ body {
   max-width: 200px;
 }
 
-.slide:hover {
-  box-shadow: 0 1px 20px rgb(247 80 80);
-}
-
 @media (max-width: 992px) {
   .slide {
     flex: 0 0 calc(100% / 3 - 15px);
@@ -289,35 +285,15 @@ body {
   }
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgb(247 80 80);
 }
 
 .card-img-top {
   object-fit: contain;
   height: 300px;
   width: 100%;
-}
-
-.card-body {
-  padding: 15px;
-}
-
-.card-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 10px;
 }
 
 .card-text {
@@ -505,11 +481,6 @@ body {
   overflow: hidden;
   transition: all 0.3s ease;
   height: 100%;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .card-body {
